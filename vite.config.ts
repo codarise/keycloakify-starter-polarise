@@ -10,6 +10,7 @@ export default defineConfig({
         tailwindcss(),
         keycloakify({
             accountThemeImplementation: "none",
+            themeName: "polarise-theme",
             keycloakVersionTargets: {
                 "22-to-25": "polarise-theme-22-to-25.jar",
                 "all-other-versions": "polarise-theme.jar"

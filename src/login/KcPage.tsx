@@ -19,7 +19,7 @@ const LoginUsername = lazy(() => import("./pages/LoginUsername"));
 const LoginResetPassword = lazy(() => import("./pages/LoginResetPassword"));
 const LoginUpdatePassword = lazy(() => import("./pages/LoginUpdatePassword"));
 const LoginVerifyEmail = lazy(() => import("./pages/LoginVerifyEmail"));
-
+const LoginUpdateProfile = lazy(() => import("./pages/LoginUpdateProfile"));
 const doMakeUserConfirmPassword = true;
 
 
@@ -82,6 +82,15 @@ export default function KcPage(props: { kcContext: KcContext }) {
                         {...{ kcContext, i18n, classes }}
                         Template={Template}
                         doUseDefaultCss={false}
+                    />
+                   );
+                   case "login-update-profile.ftl": return (
+                    <LoginUpdateProfile
+                        {...{ kcContext, i18n, classes }}
+                        Template={Template}
+                        doUseDefaultCss={false}
+                        UserProfileFormFields={UserProfileFormFields}
+                        doMakeUserConfirmPassword={doMakeUserConfirmPassword}
                     />
                    );
                     default:
