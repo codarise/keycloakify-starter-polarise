@@ -17,7 +17,6 @@ import { Label } from "../components/ui/label";
 import { cn } from "../lib/utils";
 import { buttonVariants } from "../components/ui/button";
 
-
 export default function UserProfileFormFields(props: UserProfileFormFieldsProps<KcContext, I18n>) {
     const { kcContext, i18n, kcClsx, onIsFormSubmittableValueChange, doMakeUserConfirmPassword, BeforeField, AfterField } = props;
 
@@ -61,18 +60,12 @@ export default function UserProfileFormFields(props: UserProfileFormFieldsProps<
                             }}
                         >
                             <div className="flex items-center gap-1">
-                                <Label htmlFor={attribute.name}>
-                                    {advancedMsg(attribute.displayName ?? "")}
-                                </Label>
+                                <Label htmlFor={attribute.name}>{advancedMsg(attribute.displayName ?? "")}</Label>
                                 {attribute.required && <> *</>}
                             </div>
                             <div className={kcClsx("kcInputWrapperClass")}>
                                 {attribute.annotations.inputHelperTextBefore !== undefined && (
-                                    <div
-                                        className="text-sm"
-                                        id={`form-help-text-before-${attribute.name}`}
-                                        aria-live="polite"
-                                    >
+                                    <div className="text-sm" id={`form-help-text-before-${attribute.name}`} aria-live="polite">
                                         {advancedMsg(attribute.annotations.inputHelperTextBefore)}
                                     </div>
                                 )}
@@ -86,11 +79,7 @@ export default function UserProfileFormFields(props: UserProfileFormFieldsProps<
                                 />
                                 <FieldErrors attribute={attribute} displayableErrors={displayableErrors} kcClsx={kcClsx} fieldIndex={undefined} />
                                 {attribute.annotations.inputHelperTextAfter !== undefined && (
-                                    <div
-                                        className="text-sm"
-                                        id={`form-help-text-after-${attribute.name}`}
-                                        aria-live="polite"
-                                    >
+                                    <div className="text-sm" id={`form-help-text-after-${attribute.name}`} aria-live="polite">
                                         {advancedMsg(attribute.annotations.inputHelperTextAfter)}
                                     </div>
                                 )}
@@ -147,9 +136,7 @@ function GroupLabel(props: {
 
                         return (
                             <div className={kcClsx("kcContentWrapperClass")}>
-                                <Label id={`header-${attribute.group.name}`}>
-                                    {groupHeaderText}
-                                </Label>
+                                <Label id={`header-${attribute.group.name}`}>{groupHeaderText}</Label>
                             </div>
                         );
                     })()}
@@ -161,9 +148,7 @@ function GroupLabel(props: {
 
                             return (
                                 <div className="flex items-center gap-1">
-                                    <Label id={`description-${attribute.group.name}`}>
-                                        {groupDescriptionText}
-                                    </Label>
+                                    <Label id={`description-${attribute.group.name}`}>{groupDescriptionText}</Label>
                                 </div>
                             );
                         }
@@ -309,7 +294,7 @@ function InputTag(props: InputFieldByTypeProps & { fieldIndex: number | undefine
                     "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
                     "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
                     kcClsx("kcInputClass")
-                  )}
+                )}
                 aria-invalid={displayableErrors.find(error => error.fieldIndex === fieldIndex) !== undefined}
                 disabled={attribute.readOnly}
                 autoComplete={attribute.autocomplete}
@@ -452,13 +437,13 @@ function InputTagSelects(props: InputFieldByTypeProps) {
                 return {
                     inputType: "radio",
                     classDiv: kcClsx("kcInputClassRadio"),
-                    classInput: kcClsx("kcInputClassRadioInput"),
+                    classInput: kcClsx("kcInputClassRadioInput")
                 };
             case "multiselect-checkboxes":
                 return {
                     inputType: "checkbox",
                     classDiv: kcClsx("kcInputClassCheckbox"),
-                    classInput: kcClsx("kcInputClassCheckboxInput"),
+                    classInput: kcClsx("kcInputClassCheckboxInput")
                 };
         }
     })();
@@ -531,11 +516,7 @@ function InputTagSelects(props: InputFieldByTypeProps) {
                             })
                         }
                     />
-                    <Label
-                        htmlFor={`${attribute.name}-${option}`}
-                    >
-                        {inputLabel(i18n, attribute, option)}
-                    </Label>
+                    <Label htmlFor={`${attribute.name}-${option}`}>{inputLabel(i18n, attribute, option)}</Label>
                 </div>
             ))}
         </>

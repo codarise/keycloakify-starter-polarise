@@ -33,9 +33,9 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
             displayInfo={realm.password && realm.registrationAllowed && !registrationDisabled}
             infoNode={
                 <div id="kc-registration">
-                        <a tabIndex={6} href={url.registrationUrl} className={buttonVariants({ variant: "outline", size: "sm", className: "w-full" })}>
-                            {msg("doRegister")}
-                        </a>
+                    <a tabIndex={6} href={url.registrationUrl} className={buttonVariants({ variant: "outline", size: "sm", className: "w-full" })}>
+                        {msg("doRegister")}
+                    </a>
                 </div>
             }
             headerNode={msg("doLogIn")}
@@ -45,7 +45,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                         <div id="kc-social-providers" className="flex flex-col gap-2">
                             <h2 className="text-xs text-center text-muted-foreground">{msg("identity-provider-login-label")}</h2>
                             <ul className="flex flex-col gap-2">
-                                {social.providers.map((p) => (
+                                {social.providers.map(p => (
                                     <li key={p.alias}>
                                         <a
                                             id={`social-${p.alias}`}
@@ -112,12 +112,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                                     {realm.rememberMe && !usernameHidden && (
                                         <div className="checkbox">
                                             <Label htmlFor="rememberMe">
-                                                <Checkbox
-                                                    tabIndex={3}
-                                                    id="rememberMe"
-                                                    name="rememberMe"
-                                                    defaultChecked={!!login.rememberMe}
-                                                />{" "}
+                                                <Checkbox tabIndex={3} id="rememberMe" name="rememberMe" defaultChecked={!!login.rememberMe} />{" "}
                                                 {msg("rememberMe")}
                                             </Label>
                                         </div>

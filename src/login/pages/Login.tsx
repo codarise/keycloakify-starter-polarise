@@ -13,7 +13,6 @@ import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
 import { Checkbox } from "../../components/ui/checkbox";
 
-
 export default function Login(props: PageProps<Extract<KcContext, { pageId: "login.ftl" }>, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
 
@@ -40,9 +39,13 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
             infoNode={
                 <div id="kc-registration-container">
                     <div id="kc-registration">
-                            <a tabIndex={8} href={url.registrationUrl} className={buttonVariants({ variant: "outline", size: "sm", className: "w-full" })}>
-                                {msg("doRegister")}
-                            </a>
+                        <a
+                            tabIndex={8}
+                            href={url.registrationUrl}
+                            className={buttonVariants({ variant: "outline", size: "sm", className: "w-full" })}
+                        >
+                            {msg("doRegister")}
+                        </a>
                     </div>
                 </div>
             }
@@ -52,7 +55,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                         <div id="kc-social-providers" className="flex flex-col gap-2">
                             <h2 className="text-xs text-center text-muted-foreground">{msg("identity-provider-login-label")}</h2>
                             <ul className="flex flex-col gap-2">
-                                {social.providers.map((p) => (
+                                {social.providers.map(p => (
                                     <li key={p.alias}>
                                         <a
                                             id={`social-${p.alias}`}
@@ -120,9 +123,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                             )}
 
                             <div className="flex flex-col gap-2">
-                                <Label htmlFor="password">
-                                    {msg("password")}
-                                </Label>
+                                <Label htmlFor="password">{msg("password")}</Label>
                                 <PasswordWrapper i18n={i18n} passwordInputId="password">
                                     <Input
                                         tabIndex={3}
@@ -149,13 +150,8 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                 <div id="kc-form-options">
                                     {realm.rememberMe && !usernameHidden && (
                                         <div className="flex items-center gap-2 h-8">
-                                        <Label htmlFor="rememberMe">
-                                            <Checkbox
-                                                tabIndex={5}
-                                                id="rememberMe"
-                                                name="rememberMe"
-                                                defaultChecked={!!login.rememberMe}
-                                            />{" "} 
+                                            <Label htmlFor="rememberMe">
+                                                <Checkbox tabIndex={5} id="rememberMe" name="rememberMe" defaultChecked={!!login.rememberMe} />{" "}
                                                 {msg("rememberMe")}
                                             </Label>
                                         </div>
@@ -164,7 +160,11 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                 <div>
                                     {realm.resetPasswordAllowed && (
                                         <span>
-                                            <a tabIndex={6} href={url.loginResetCredentialsUrl} className={buttonVariants({ variant: "link", size: "sm" })}>
+                                            <a
+                                                tabIndex={6}
+                                                href={url.loginResetCredentialsUrl}
+                                                className={buttonVariants({ variant: "link", size: "sm" })}
+                                            >
                                                 {msg("doForgotPassword")}
                                             </a>
                                         </span>

@@ -21,10 +21,11 @@ export default function LoginVerifyEmail(props: PageProps<Extract<KcContext, { p
                 <div className="flex flex-col gap-2">
                     {msg("emailVerifyInstruction2")}
                     <div className="flex items-center gap-2">
-                        <a href={url.loginAction} className={buttonVariants({ variant: "outline", size: "sm" })}>{msg("doClickHere")}</a>
+                        <a href={url.loginAction} className={buttonVariants({ variant: "outline", size: "sm" })}>
+                            {msg("doClickHere")}
+                        </a>
                         {msg("emailVerifyInstruction3")}
                     </div>
-                   
                 </div>
             }
         >

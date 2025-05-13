@@ -17,7 +17,7 @@ export function getIsDark(): boolean {
         window.history.replaceState({}, "", url.toString());
 
         const isDark = value === "true";
-        
+
         // Persist the value in session storage so that
         // if the user navigates, for example, from login.ftl to
         // register.ftl, we don’t lose the state.
@@ -37,5 +37,5 @@ export function getIsDark(): boolean {
     }
 
     // Return the browser preference
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 }
