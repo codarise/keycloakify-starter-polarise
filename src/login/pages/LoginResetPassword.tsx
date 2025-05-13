@@ -9,7 +9,6 @@ import { buttonVariants } from "../../components/ui/button";
 export default function LoginResetPassword(props: PageProps<Extract<KcContext, { pageId: "login-reset-password.ftl" }>, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
 
-
     const { url, realm, auth, messagesPerField } = kcContext;
 
     const { msg, msgStr } = i18n;
@@ -22,7 +21,13 @@ export default function LoginResetPassword(props: PageProps<Extract<KcContext, {
             classes={classes}
             displayInfo
             displayMessage={!messagesPerField.existsError("username")}
-            infoNode={realm.duplicateEmailsAllowed ? <span className="text-sm bg-muted p-4 rounded-md">{msg("emailInstructionUsername")}</span> : <span className="text-sm bg-muted p-4 rounded-md">{msg("emailInstruction")}</span>}
+            infoNode={
+                realm.duplicateEmailsAllowed ? (
+                    <span className="text-sm bg-muted p-4 rounded-md">{msg("emailInstructionUsername")}</span>
+                ) : (
+                    <span className="text-sm bg-muted p-4 rounded-md">{msg("emailInstruction")}</span>
+                )
+            }
             headerNode={msg("emailForgotTitle")}
         >
             <form id="kc-reset-password-form" className="flex flex-col gap-4" action={url.loginAction} method="post">
@@ -59,16 +64,14 @@ export default function LoginResetPassword(props: PageProps<Extract<KcContext, {
                 </div>
                 <div className="flex flex-col gap-2">
                     <div id="kc-form-buttons" className="flex flex-col gap-2">
-                        <input
-                            className={buttonVariants({ variant: "default", className: "w-full" })}
-                            type="submit"
-                            value={msgStr("doSubmit")}
-                        />
+                        <input className={buttonVariants({ variant: "default", className: "w-full" })} type="submit" value={msgStr("doSubmit")} />
                     </div>
                     <div id="kc-form-options" className="flex flex-col gap-2">
                         <div className="flex flex-col gap-2">
                             <span>
-                                <a href={url.loginUrl} className={buttonVariants({ variant: "link", className: "w-full" })}>{msg("backToLogin")}</a>
+                                <a href={url.loginUrl} className={buttonVariants({ variant: "link", className: "w-full" })}>
+                                    {msg("backToLogin")}
+                                </a>
                             </span>
                         </div>
                     </div>

@@ -56,7 +56,7 @@ export default function LoginUpdateProfile(props: LoginUpdateProfileProps) {
                             type="submit"
                             value={msgStr("doSubmit")}
                         />
-   
+
                         {isAppInitiatedAction && (
                             <button
                                 className={buttonVariants({ variant: "outline", className: "w-full" })}

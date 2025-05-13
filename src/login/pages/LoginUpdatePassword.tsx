@@ -11,7 +11,6 @@ import { EyeClosed } from "lucide-react";
 import { Button, buttonVariants } from "../../components/ui/button";
 import { Checkbox } from "../../components/ui/checkbox";
 
-
 export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, { pageId: "login-update-password.ftl" }>, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
 
@@ -31,9 +30,7 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
             <form id="kc-passwd-update-form" action={url.loginAction} method="post" className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
                     <div className="flex flex-col gap-2">
-                        <Label htmlFor="password-new">
-                            {msg("passwordNew")}
-                        </Label>
+                        <Label htmlFor="password-new">{msg("passwordNew")}</Label>
                     </div>
                     <div className="flex flex-col gap-2">
                         <PasswordWrapper i18n={i18n} passwordInputId="password-new">
@@ -61,48 +58,36 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
                 </div>
 
                 <div className="flex flex-col gap-2">
-                        <Label htmlFor="password-confirm">
-                            {msg("passwordConfirm")}
-                        </Label>
-      
-                        <PasswordWrapper i18n={i18n} passwordInputId="password-confirm">
-                            <Input
-                                type="password"
-                                id="password-confirm"
-                                name="password-confirm"
-                                autoFocus
-                                autoComplete="new-password"
-                                aria-invalid={messagesPerField.existsError("password", "password-confirm")}
-                            />
-                        </PasswordWrapper>
+                    <Label htmlFor="password-confirm">{msg("passwordConfirm")}</Label>
 
-                        {messagesPerField.existsError("password-confirm") && (
-                            <span
-                                id="input-error-password-confirm"
-                                className="text-sm text-red-500"
-                                aria-live="polite"
-                                dangerouslySetInnerHTML={{
-                                    __html: kcSanitize(messagesPerField.get("password-confirm"))
-                                }}
-                            />
-                        )}
-                    </div>
+                    <PasswordWrapper i18n={i18n} passwordInputId="password-confirm">
+                        <Input
+                            type="password"
+                            id="password-confirm"
+                            name="password-confirm"
+                            autoFocus
+                            autoComplete="new-password"
+                            aria-invalid={messagesPerField.existsError("password", "password-confirm")}
+                        />
+                    </PasswordWrapper>
+
+                    {messagesPerField.existsError("password-confirm") && (
+                        <span
+                            id="input-error-password-confirm"
+                            className="text-sm text-red-500"
+                            aria-live="polite"
+                            dangerouslySetInnerHTML={{
+                                __html: kcSanitize(messagesPerField.get("password-confirm"))
+                            }}
+                        />
+                    )}
+                </div>
                 <div className="flex flex-col gap-4 ">
                     <LogoutOtherSessions i18n={i18n} />
                     <div id="kc-form-buttons" className="flex flex-col gap-4">
-                        <input
-                            className={buttonVariants({ variant: "default", className: "w-full" })}
-                            type="submit"
-                            value={msgStr("doSubmit")}
-                        />
+                        <input className={buttonVariants({ variant: "default", className: "w-full" })} type="submit" value={msgStr("doSubmit")} />
                         {isAppInitiatedAction && (
-                            <Button
-                                variant="outline"
-                                className="w-full"
-                                type="submit"
-                                name="cancel-aia"
-                                value="true"
-                            >
+                            <Button variant="outline" className="w-full" type="submit" name="cancel-aia" value="true">
                                 {msg("doCancel")}
                             </Button>
                         )}
@@ -114,7 +99,7 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
 }
 
 function LogoutOtherSessions(props: { i18n: I18n }) {
-    const {  i18n } = props;
+    const { i18n } = props;
 
     const { msg } = i18n;
 
@@ -129,7 +114,6 @@ function LogoutOtherSessions(props: { i18n: I18n }) {
         </div>
     );
 }
-
 
 function PasswordWrapper(props: { i18n: I18n; passwordInputId: string; children: JSX.Element }) {
     const { i18n, passwordInputId, children } = props;
@@ -153,4 +137,3 @@ function PasswordWrapper(props: { i18n: I18n; passwordInputId: string; children:
         </div>
     );
 }
-

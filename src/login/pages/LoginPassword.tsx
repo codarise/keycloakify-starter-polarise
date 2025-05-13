@@ -75,7 +75,7 @@ export default function LoginPassword(props: PageProps<Extract<KcContext, { page
                                 />
                             )}
                         </div>
-                     
+
                         <div id="kc-form-buttons">
                             <input
                                 tabIndex={4}
@@ -92,7 +92,11 @@ export default function LoginPassword(props: PageProps<Extract<KcContext, { page
                             <div className="flex flex-col gap-2">
                                 {realm.resetPasswordAllowed && (
                                     <span>
-                                        <a tabIndex={5} href={url.loginResetCredentialsUrl} className={buttonVariants({ variant: "link", className:"w-full" })}>
+                                        <a
+                                            tabIndex={5}
+                                            href={url.loginResetCredentialsUrl}
+                                            className={buttonVariants({ variant: "link", className: "w-full" })}
+                                        >
                                             {msg("doForgotPassword")}
                                         </a>
                                     </span>
