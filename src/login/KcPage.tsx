@@ -23,6 +23,7 @@ const LoginPageExpired = lazy(() => import("./pages/LoginPageExpired"));
 const Register = lazy(() => import("./pages/Register"));
 const Terms = lazy(() => import("./pages/Terms"));
 const LoginOtp = lazy(() => import("./pages/LoginOtp"));
+const LoginConfigTotp = lazy(() => import("./pages/LoginConfigTotp"));
 
 const doMakeUserConfirmPassword = true;
 
@@ -118,6 +119,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                         case "login-otp.ftl":
                             return (
                                 <LoginOtp
+                                    {...{ kcContext, i18n, classes }}
+                                    Template={Template}
+                                    doUseDefaultCss={false}
+                                />
+                            );
+                        case "login-config-totp.ftl":
+                            return (
+                                <LoginConfigTotp
                                     {...{ kcContext, i18n, classes }}
                                     Template={Template}
                                     doUseDefaultCss={false}

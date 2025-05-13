@@ -58,8 +58,10 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     return (
         <div className="mx-auto h-screen flex flex-col justify-between items-center p-0 md:p-4 relative">
-            <img src={logo} alt="logo" className="w-1/2 py-2 invert dark:invert-0 absolute bottom-0 opacity-2 -z-10 drop-shadow-lg" />
-            <div className="absolute top-0 left-0 w-full h-full bg-radial-[at_50%_100%] from-[var(--ai-teal)]/30 via-transparent to-transparent animate-[pulse_5s_ease-in-out_infinite] -z-10" />
+            <div className="fixed bottom-0 left-0 w-full flex justify-center pointer-events-none">
+                <img src={logo} alt="logo" className="w-1/2 py-2 invert dark:invert-0 opacity-2 drop-shadow-lg" />
+            </div>
+            <div className="fixed bottom-0 left-0 w-full h-full bg-radial-[at_50%_100%] from-[var(--ai-teal)]/30 via-transparent to-transparent animate-[pulse_5s_ease-in-out_infinite] -z-10" />
             <div />
             <div className="flex flex-col items-center justify-between w-full">
                 <Card.Card className="w-full max-w-md backdrop-blur-sm border border-border/50 bg-card/10 pt-0">
