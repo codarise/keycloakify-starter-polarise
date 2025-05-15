@@ -150,6 +150,6 @@
     }
     body {
         @apply bg-background text-foreground;
-        font-family: "AeonikTRIAL-Regular", sans-serif;
+        font-family: "AeonikTRIAL-Regular", sans-serif !important;
     }
 }

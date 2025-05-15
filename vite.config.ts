@@ -9,7 +9,7 @@ export default defineConfig({
         react(),
         tailwindcss(),
         keycloakify({
-            accountThemeImplementation: "none",
+            accountThemeImplementation: "Single-Page",
             themeName: "polarise-theme",
             keycloakVersionTargets: {
                 "22-to-25": "polarise-theme-22-to-25.jar",
