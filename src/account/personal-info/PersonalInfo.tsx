@@ -158,32 +158,21 @@ export const PersonalInfo = () => {
                     </ActionGroup>
                 )}
                 {context.environment.features.deleteAccountAllowed && (
-                    <ExpandableSection
-                        data-testid="delete-account"
-                        toggleText={t("deleteAccount")}
-                    >
-                        <Alert
-                            isInline
-                            title={t("deleteAccount")}
-                            variant="danger"
-                            actionLinks={
-                                <Button
-                                    id="delete-account-btn"
-                                    variant="danger"
-                                    onClick={() =>
-                                        context.keycloak.login({
-                                            action: "delete_account"
-                                        })
-                                    }
-                                    className="delete-button"
-                                >
-                                    {t("delete")}
-                                </Button>
+                    <div className="flex flex-col items-start gap-2 p-4 bg-red-500/10 rounded-md">
+                        <p className="text-lg font-bold">{t("deleteAccount")}</p>
+                        <p className="text-sm mb-4">{t("deleteAccountWarning")}</p>
+                        <Button
+                            id="delete-account-btn"
+                            variant="destructive"
+                            onClick={() =>
+                                context.keycloak.login({
+                                    action: "delete_account"
+                                })
                             }
-                        >
-                            {t("deleteAccountWarning")}
-                        </Alert>
-                    </ExpandableSection>
+                >
+                    {t("delete")}
+                </Button>
+                    </div>
                 )}
             </Form>
         </Page>
