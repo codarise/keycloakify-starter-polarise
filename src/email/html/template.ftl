@@ -15,33 +15,19 @@
     <style type="text/css">
         
         @font-face {
-            font-family: 'AeonikTRIAL-Regular';
-            src: url('${url.resourcesUrl}/aeoniktrial-regular-webfont.woff2') format('woff2'),
-                 url('${url.resourcesUrl}/aeoniktrial-regular-webfont.woff') format('woff');
+            font-family: 'Aeonik-Regular';
+            src: url('${url.resourcesUrl}/aeonik-regular.woff2') format('woff2'),
+                 url('${url.resourcesUrl}/aeonik-regular.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
-        
-        @font-face {
-            font-family: 'AeonikTRIAL-Light';
-            src: url('${url.resourcesUrl}/aeoniktrial-light-webfont.woff2') format('woff2'),
-                 url('${url.resourcesUrl}/aeoniktrial-light-webfont.woff') format('woff');
-            font-weight: 300;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'AeonikTRIAL-Bold';
-            src: url('${url.resourcesUrl}/aeoniktrial-bold-webfont.woff2') format('woff2'),
-                 url('${url.resourcesUrl}/aeoniktrial-bold-webfont.woff') format('woff');
-            font-weight: bold;
-            font-style: normal;
-        }
+
+
         
         body {
             margin: 0;
             padding: 40px 8px 8px 8px;
-            font-family: 'AeonikTRIAL-Regular', 'Inter', Arial, sans-serif;
+            font-family: 'Aeonik-Regular', 'Inter', Arial, sans-serif;
             background-color: #0A0A0A;
             color: #E5E5E5;
             line-height: 1.6;

@@ -24,6 +24,9 @@ const Register = lazy(() => import("./pages/Register"));
 const Terms = lazy(() => import("./pages/Terms"));
 const LoginOtp = lazy(() => import("./pages/LoginOtp"));
 const LoginConfigTotp = lazy(() => import("./pages/LoginConfigTotp"));
+const WebauthnRegister = lazy(() => import("./pages/WebauthnRegister"));
+const SelectAuthenticator = lazy(() => import("./pages/SelectAuthenticator"));
+const WebauthnError = lazy(() => import("./pages/WebauthnError"));
 
 const doMakeUserConfirmPassword = true;
 
@@ -39,7 +42,29 @@ export default function KcPage(props: { kcContext: KcContext }) {
                 storageKey="vite-ui-theme"
             >
                 {(() => {
+          
                     switch (kcContext.pageId) {
+                        case "webauthn-error.ftl": return (
+                            <WebauthnError
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "select-authenticator.ftl": return (
+                            <SelectAuthenticator
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "webauthn-register.ftl": return (
+                            <WebauthnRegister
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
                         case "login.ftl":
                             return (
                                 <Login

@@ -4,31 +4,14 @@
 @custom-variant dark (&:is(.dark *));
 
 @font-face {
-    font-family: "AeonikTRIAL-Regular";
+    font-family: "Aeonik-Regular";
     src:
-        url("../fonts/aeoniktrial-regular-webfont.woff2") format("woff2"),
-        url("../fonts/aeoniktrial-regular-webfont.woff") format("woff");
+        url("../fonts/aeonik-regular.woff2") format("woff2"),
+        url("../fonts/aeonik-regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
-@font-face {
-    font-family: "AeonikTRIAL-Light";
-    src:
-        url("../fonts/aeoniktrial-light-webfont.woff2") format("woff2"),
-        url("../fonts/aeoniktrial-light-webfont.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "AeonikTRIAL-Bold";
-    src:
-        url("../fonts/aeoniktrial-bold-webfont.woff2") format("woff2"),
-        url("../fonts/aeoniktrial-bold-webfont.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
-}
 @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);

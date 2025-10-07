@@ -227,7 +227,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
             </div>
             <div className="pt-4 mx-auto">
                 <div className="flex items-center justify-center gap-4">
-                    <span className="text-xs text-muted-foreground">Polarise 2025</span>
+                    <span className="text-xs text-muted-foreground">Polarise {new Date().getFullYear()}</span>
                 </div>
             </div>
         </div>
