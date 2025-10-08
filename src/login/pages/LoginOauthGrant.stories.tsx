@@ -30,14 +30,6 @@ export const WithBasicClient: Story = {
                 oauth: {
                     code: "abc123def456",
                     clientScopesRequested: [
-                        {
-                            consentScreenText: "Read your profile information",
-                            dynamicScopeParameter: null
-                        },
-                        {
-                            consentScreenText: "Access your email address",
-                            dynamicScopeParameter: null
-                        }
                     ]
                 }
             }}
@@ -51,7 +43,7 @@ export const WithClientWithoutName: Story = {
             kcContext={{
                 client: {
                     clientId: "anonymous-app",
-                    name: null,
+                    name: undefined,
                     attributes: {
                         logoUri: "https://via.placeholder.com/64x64/28a745/ffffff?text=API"
                     }
@@ -59,10 +51,6 @@ export const WithClientWithoutName: Story = {
                 oauth: {
                     code: "xyz789uvw012",
                     clientScopesRequested: [
-                        {
-                            consentScreenText: "Read your basic profile",
-                            dynamicScopeParameter: null
-                        }
                     ]
                 }
             }}
@@ -78,20 +66,13 @@ export const WithClientWithoutLogo: Story = {
                     clientId: "no-logo-app",
                     name: "Application Without Logo",
                     attributes: {
-                        logoUri: null
+                        logoUri: undefined
                     }
                 },
                 oauth: {
                     code: "def456ghi789",
                     clientScopesRequested: [
-                        {
-                            consentScreenText: "View your account details",
-                            dynamicScopeParameter: null
-                        },
-                        {
-                            consentScreenText: "Manage your settings",
-                            dynamicScopeParameter: null
-                        }
+
                     ]
                 }
             }}
@@ -115,21 +96,17 @@ export const WithDynamicScopes: Story = {
                     clientScopesRequested: [
                         {
                             consentScreenText: "Read your profile information",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Access your repositories",
                             dynamicScopeParameter: "my-organization"
-                        },
-                        {
-                            consentScreenText: "Manage your projects",
-                            dynamicScopeParameter: "project-123"
                         }
                     ]
                 }
             }}
         />
-    )
+    ),
 };
 
 export const WithTermsOfService: Story = {
@@ -141,7 +118,7 @@ export const WithTermsOfService: Story = {
                     name: "Application with Terms",
                     attributes: {
                         logoUri: "https://via.placeholder.com/64x64/6f42c1/ffffff?text=ToS",
-                        tosUri: "https://example.com/terms-of-service"
+                        tosUri: "https://example.com/terms-of-service",
                     }
                 },
                 oauth: {
@@ -149,7 +126,7 @@ export const WithTermsOfService: Story = {
                     clientScopesRequested: [
                         {
                             consentScreenText: "Read your profile information",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         }
                     ]
                 }
@@ -175,7 +152,7 @@ export const WithPrivacyPolicy: Story = {
                     clientScopesRequested: [
                         {
                             consentScreenText: "Access your email address",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         }
                     ]
                 }
@@ -202,15 +179,15 @@ export const WithBothTermsAndPolicy: Story = {
                     clientScopesRequested: [
                         {
                             consentScreenText: "Read your profile information",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Access your email address",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Manage your account settings",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         }
                     ]
                 }
@@ -235,35 +212,35 @@ export const WithManyScopes: Story = {
                     clientScopesRequested: [
                         {
                             consentScreenText: "Read your profile information",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Access your email address",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "View your account details",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Manage your settings",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Access your files",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Send messages on your behalf",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Read your calendar",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Access your contacts",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         }
                     ]
                 }
@@ -288,7 +265,7 @@ export const WithLongClientName: Story = {
                     clientScopesRequested: [
                         {
                             consentScreenText: "Read your profile information",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         }
                     ]
                 }
@@ -313,7 +290,7 @@ export const WithLongScopeText: Story = {
                     clientScopesRequested: [
                         {
                             consentScreenText: "This is a very long scope description that might cause layout issues and should be tested to ensure proper text wrapping and display",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Another long scope description with dynamic parameter",
@@ -345,11 +322,11 @@ export const WithFrenchLanguage: Story = {
                     clientScopesRequested: [
                         {
                             consentScreenText: "Lire vos informations de profil",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Accéder à votre adresse e-mail",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         }
                     ]
                 }
@@ -377,11 +354,11 @@ export const WithGermanLanguage: Story = {
                     clientScopesRequested: [
                         {
                             consentScreenText: "Ihre Profilinformationen lesen",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Auf Ihre E-Mail-Adresse zugreifen",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         }
                     ]
                 }
@@ -409,11 +386,11 @@ export const WithSpanishLanguage: Story = {
                     clientScopesRequested: [
                         {
                             consentScreenText: "Leer su información de perfil",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         },
                         {
                             consentScreenText: "Acceder a su dirección de correo electrónico",
-                            dynamicScopeParameter: null
+                            dynamicScopeParameter: undefined
                         }
                     ]
                 }

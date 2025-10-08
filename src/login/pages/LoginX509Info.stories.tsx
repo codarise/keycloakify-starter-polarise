@@ -40,7 +40,7 @@ export const WithCertificateNoUser: Story = {
                     formData: {
                         subjectDN: "CN=Jane Smith, OU=Engineering, O=Tech Corp, C=CA",
                         isUserEnabled: false,
-                        username: null
+                        username: undefined
                     }
                 }
             }}
@@ -54,9 +54,9 @@ export const WithNoCertificate: Story = {
             kcContext={{
                 x509: {
                     formData: {
-                        subjectDN: null,
+                        subjectDN: undefined,
                         isUserEnabled: false,
-                        username: null
+                        username: undefined
                     }
                 }
             }}
