@@ -112,7 +112,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     {messagesPerField.existsError("username", "password") && (
                                         <span
                                             id="input-error"
-                                            className="text-red-500 text-sm"
+                                            className="text-destructive text-sm"
                                             aria-live="polite"
                                             dangerouslySetInnerHTML={{
                                                 __html: kcSanitize(messagesPerField.getFirstError("username", "password"))
@@ -137,7 +137,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                 {usernameHidden && messagesPerField.existsError("username", "password") && (
                                     <span
                                         id="input-error"
-                                        className="text-red-500 text-sm"
+                                        className="text-destructive text-sm"
                                         aria-live="polite"
                                         dangerouslySetInnerHTML={{
                                             __html: kcSanitize(messagesPerField.getFirstError("username", "password"))

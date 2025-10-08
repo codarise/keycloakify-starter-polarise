@@ -145,12 +145,12 @@ export const PersonalInfo = () => {
                             id="save-btn"
                             variant="default"
                         >
-                            {t("save")}
+                          <span className="text-background">{t("save")}</span>
                         </Button>
                         <Button
                             data-testid="cancel"
                             id="cancel-btn"
-                            variant="link"
+                            variant="outline"
                             onClick={() => reset()}
                         >
                             {t("cancel")}
@@ -158,9 +158,11 @@ export const PersonalInfo = () => {
                     </ActionGroup>
                 )}
                 {context.environment.features.deleteAccountAllowed && (
-                    <div className="flex flex-col items-start gap-2 p-4 bg-red-500/10 rounded-md">
-                        <p className="text-lg font-bold">{t("deleteAccount")}</p>
+                    <div className="flex flex-col md:flex-row justify-between md:items-end gap-2 p-4 bg-destructive/10">
+                        <div className="flex flex-col gap-2">
+                        <p className="text-lg font-bold text-destructive">{t("deleteAccount")}</p>
                         <p className="text-sm mb-4">{t("deleteAccountWarning")}</p>
+                        </div>
                         <Button
                             id="delete-account-btn"
                             variant="destructive"
@@ -170,7 +172,7 @@ export const PersonalInfo = () => {
                                 })
                             }
                 >
-                    {t("delete")}
+                    <span className="text-destructive hover:text-white">{t("delete")}</span>
                 </Button>
                     </div>
                 )}

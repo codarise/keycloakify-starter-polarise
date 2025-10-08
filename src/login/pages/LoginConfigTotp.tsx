@@ -136,7 +136,7 @@ export default function LoginConfigTotp(props: PageProps<Extract<KcContext, { pa
                         {messagesPerField.existsError("totp") && (
                             <p
                                 id="input-error-otp-code"
-                                className="text-red-500 text-center text-sm mt-2"
+                                className="text-destructive text-center text-sm mt-2"
                                 aria-live="polite"
                                 dangerouslySetInnerHTML={{
                                     __html: kcSanitize(messagesPerField.get("totp"))
@@ -163,7 +163,7 @@ export default function LoginConfigTotp(props: PageProps<Extract<KcContext, { pa
                             {messagesPerField.existsError("userLabel") && (
                                 <span
                                     id="input-error-otp-label"
-                                    className="text-red-500 text-center text-sm mt-2"
+                                    className="text-destructive text-center text-sm mt-2"
                                     aria-live="polite"
                                     dangerouslySetInnerHTML={{
                                         __html: kcSanitize(messagesPerField.get("userLabel"))

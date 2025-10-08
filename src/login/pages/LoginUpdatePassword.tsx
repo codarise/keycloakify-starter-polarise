@@ -47,7 +47,7 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
                         {messagesPerField.existsError("password") && (
                             <span
                                 id="input-error-password"
-                                className="text-sm text-red-500"
+                                className="text-sm text-destructive"
                                 aria-live="polite"
                                 dangerouslySetInnerHTML={{
                                     __html: kcSanitize(messagesPerField.get("password"))
@@ -74,7 +74,7 @@ export default function LoginUpdatePassword(props: PageProps<Extract<KcContext, 
                     {messagesPerField.existsError("password-confirm") && (
                         <span
                             id="input-error-password-confirm"
-                            className="text-sm text-red-500"
+                            className="text-sm text-destructive"
                             aria-live="polite"
                             dangerouslySetInnerHTML={{
                                 __html: kcSanitize(messagesPerField.get("password-confirm"))

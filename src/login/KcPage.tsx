@@ -27,6 +27,25 @@ const LoginConfigTotp = lazy(() => import("./pages/LoginConfigTotp"));
 const WebauthnRegister = lazy(() => import("./pages/WebauthnRegister"));
 const SelectAuthenticator = lazy(() => import("./pages/SelectAuthenticator"));
 const WebauthnError = lazy(() => import("./pages/WebauthnError"));
+const FrontchannelLogout = lazy(() => import("./pages/FrontchannelLogout"));
+const LoginRecoveryAuthnCodeConfig = lazy(() => import("./pages/LoginRecoveryAuthnCodeConfig"));
+const LogoutConfirm = lazy(() => import("./pages/LogoutConfirm"))
+const IdpReviewUserProfile = lazy(() => import("./pages/IdpReviewUserProfile"))
+const LoginIdpLinkConfirm = lazy(() => import("./pages/LoginIdpLinkConfirm"))
+const LoginIdpLinkEmail = lazy(() => import("./pages/LoginIdpLinkEmail"))
+const LoginOauthGrant = lazy(() => import("./pages/LoginOauthGrant"))
+const LoginOauth2DeviceVerifyUserCode = lazy(() => import("./pages/LoginOauth2DeviceVerifyUserCode"))
+const LoginRecoveryAuthnCodeInput = lazy(() => import("./pages/LoginRecoveryAuthnCodeInput"));
+const LoginResetOtp = lazy(() => import("./pages/LoginResetOtp"));
+const LoginX509Info = lazy(() => import("./pages/LoginX509Info"));
+const LoginPasskeysConditionalAuthenticate = lazy(() => import("./pages/LoginPasskeysConditionalAuthenticate"))
+const LoginIdpLinkConfirmOverride = lazy(() => import("./pages/LoginIdpLinkConfirmOverride"));
+const Info = lazy(() => import("./pages/Info"));
+const Error = lazy(() => import("./pages/Error"))
+const SamlPostForm = lazy(() => import("./pages/SamlPostForm"));
+const DeleteCredential = lazy(() => import("./pages/DeleteCredential"));
+const WebauthnAuthenticate = lazy(() => import("./pages/WebauthnAuthenticate"));
+const DeleteAccountConfirm = lazy(() => import("./pages/DeleteAccountConfirm"));
 
 const doMakeUserConfirmPassword = true;
 
@@ -42,8 +61,142 @@ export default function KcPage(props: { kcContext: KcContext }) {
                 storageKey="vite-ui-theme"
             >
                 {(() => {
-          
                     switch (kcContext.pageId) {
+                        case "delete-account-confirm.ftl": return (
+                            <DeleteAccountConfirm
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "webauthn-authenticate.ftl": return (
+                            <WebauthnAuthenticate
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "delete-credential.ftl": return (
+                            <DeleteCredential
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "saml-post-form.ftl": return (
+                            <SamlPostForm
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "error.ftl": return (
+                            <Error
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "info.ftl": return (
+                            <Info
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "login-idp-link-confirm-override.ftl": return (
+                            <LoginIdpLinkConfirmOverride
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "login-passkeys-conditional-authenticate.ftl": return (
+                            <LoginPasskeysConditionalAuthenticate
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "login-x509-info.ftl": return (
+                            <LoginX509Info
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "login-reset-otp.ftl": return (
+                            <LoginResetOtp
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "login-recovery-authn-code-input.ftl": return (
+                            <LoginRecoveryAuthnCodeInput
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "login-oauth2-device-verify-user-code.ftl": return (
+                            <LoginOauth2DeviceVerifyUserCode
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "login-oauth-grant.ftl": return (
+                            <LoginOauthGrant
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "login-idp-link-email.ftl": return (
+                            <LoginIdpLinkEmail
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "login-idp-link-confirm.ftl": return (
+                            <LoginIdpLinkConfirm
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "idp-review-user-profile.ftl": return (
+                            <IdpReviewUserProfile
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            UserProfileFormFields={UserProfileFormFields}
+                            doMakeUserConfirmPassword={doMakeUserConfirmPassword}
+                            />
+                            );
+                        case "logout-confirm.ftl": return (
+                            <LogoutConfirm
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "login-recovery-authn-code-config.ftl": return (
+                            <LoginRecoveryAuthnCodeConfig
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
+                        case "frontchannel-logout.ftl": return (
+                            <FrontchannelLogout
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={false}
+                            />
+                            );
                         case "webauthn-error.ftl": return (
                             <WebauthnError
                             {...{ kcContext, i18n, classes }}

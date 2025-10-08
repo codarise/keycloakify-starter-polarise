@@ -53,7 +53,7 @@ export default function LoginResetPassword(props: PageProps<Extract<KcContext, {
                         {messagesPerField.existsError("username") && (
                             <span
                                 id="input-error-username"
-                                className="text-sm text-red-500"
+                                className="text-sm text-destructive"
                                 aria-live="polite"
                                 dangerouslySetInnerHTML={{
                                     __html: kcSanitize(messagesPerField.get("username"))

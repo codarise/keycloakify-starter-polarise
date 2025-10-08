@@ -145,7 +145,7 @@ function TermsAcceptance(props: {
                     <div>
                         <span
                             id="input-error-terms-accepted"
-                            className="text-sm leading-6 text-red-500"
+                            className="text-sm leading-6 text-destructive"
                             aria-live="polite"
                             dangerouslySetInnerHTML={{
                                 __html: kcSanitize(messagesPerField.get("termsAccepted"))

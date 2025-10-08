@@ -175,7 +175,7 @@ function FieldErrors(props: { attribute: Attribute; displayableErrors: FormField
     return (
         <span
             id={`input-error-${attribute.name}${fieldIndex === undefined ? "" : `-${fieldIndex}`}`}
-            className="text-sm text-red-500"
+            className="text-sm text-destructive"
             aria-live="polite"
         >
             {displayableErrors

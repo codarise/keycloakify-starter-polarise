@@ -67,7 +67,7 @@ export default function LoginPassword(props: PageProps<Extract<KcContext, { page
                             {messagesPerField.existsError("password") && (
                                 <span
                                     id="input-error-password"
-                                    className="text-red-500 text-sm"
+                                    className="text-destructive text-sm"
                                     aria-live="polite"
                                     dangerouslySetInnerHTML={{
                                         __html: kcSanitize(messagesPerField.get("password"))
