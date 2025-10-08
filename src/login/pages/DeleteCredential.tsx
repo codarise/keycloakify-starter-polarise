@@ -1,4 +1,3 @@
-import { getKcClsx } from "keycloakify/login/lib/kcClsx";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
@@ -9,10 +8,6 @@ export default function DeleteCredential(props: PageProps<Extract<KcContext, { p
 
     const { msgStr, msg } = i18n;
 
-    const { kcClsx } = getKcClsx({
-        doUseDefaultCss,
-        classes
-    });
 
     const { url, credentialLabel } = kcContext;
 

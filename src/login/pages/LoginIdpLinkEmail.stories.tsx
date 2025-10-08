@@ -280,7 +280,7 @@ export const WithNullRealmName: Story = {
                     username: "johndoe"
                 },
                 realm: {
-                    displayName: null
+                    displayName: "null"
                 }
             }}
         />

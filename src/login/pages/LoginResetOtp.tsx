@@ -1,23 +1,13 @@
-import { Fragment } from "react";
-import { getKcClsx } from "keycloakify/login/lib/kcClsx";
-
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
 import { buttonVariants } from "../../components/ui/button";
 import { Label } from "../../components/ui/label";
 import { RadioGroup, RadioGroupItem } from "../../components/ui/radio-group";
-import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "../../components/ui/input-otp";
-import { Input } from "../../components/ui/input";
-import { Checkbox } from "../../components/ui/checkbox";
 
 export default function LoginResetOtp(props: PageProps<Extract<KcContext, { pageId: "login-reset-otp.ftl" }>, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
 
-    const { kcClsx } = getKcClsx({
-        doUseDefaultCss,
-        classes
-    });
 
     const { url, messagesPerField, configuredOtpCredentials } = kcContext;
 
