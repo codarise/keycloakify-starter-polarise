@@ -1,7 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+    
 
 @custom-variant dark (&:is(.dark *));
+
+
+@font-face {
+    font-family: "Inter";
+    src:
+    url('https://fonts.cdnfonts.com/css/inter');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family: "Aeonik-Regular";
@@ -11,7 +21,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
@@ -133,6 +142,19 @@
     }
     body {
         @apply bg-background text-foreground;
-        font-family: "AeonikTRIAL-Regular", sans-serif !important;
+        font-family: "Inter", sans-serif !important;
+        font-display: swap;
+    }
+    h1 {
+        font-family: "Aeonik-Regular", sans-serif !important;
+        font-display: swap;
+    }
+    h2 {
+        font-family: "Aeonik-Regular", sans-serif !important;
+        font-display: swap;
+    }
+    h3 {
+        font-family: "Aeonik-Regular", sans-serif !important;
+        font-display: swap;
     }
 }
